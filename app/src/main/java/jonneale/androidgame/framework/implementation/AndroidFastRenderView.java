@@ -34,7 +34,7 @@ public class AndroidFastRenderView extends SurfaceView implements Runnable {
 
     @Override
     public void run() {
-        Rect dstRect = new Rect;
+        Rect dstRect = new Rect();
         long startTime = System.nanoTime();
         while(running){
             if(!holder.getSurface().isValid()) continue;

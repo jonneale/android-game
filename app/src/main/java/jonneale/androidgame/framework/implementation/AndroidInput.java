@@ -6,13 +6,14 @@ import android.view.View;
 import android.os.Build.VERSION;
 
 import jonneale.androidgame.framework.IInput;
+import jonneale.androidgame.framework.ITouchHandler;
 
 /**
  * Created by jonneale on 11/04/2015.
  */
 public class AndroidInput implements IInput {
 
-    SingleTouchHandler touchHandler;
+    ITouchHandler touchHandler;
 
     public AndroidInput(Context context, View view, float scaleX, float scaleY){
         if (Integer.parseInt(VERSION.SDK) < 5){

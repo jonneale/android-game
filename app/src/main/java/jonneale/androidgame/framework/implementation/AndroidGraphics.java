@@ -107,13 +107,13 @@ public class AndroidGraphics implements IGraphics{
         dstRect.right = x + srcWidth;
         dstRect.bottom = y + srcHeight;
 
-        canvas.drawBitmap(Image.bitmap, srcRect, dstRect,
+        canvas.drawBitmap(((AndroidImage) image).bitmap, srcRect, dstRect,
                 null);
     }
 
     @Override
     public void drawImage(IImage image, int x, int y) {
-        canvas.drawBitmap(((AndroidImage) Image).bitmap, x, y, null);
+        canvas.drawBitmap(((AndroidImage) image).bitmap, x, y, null);
     }
 
     @Override

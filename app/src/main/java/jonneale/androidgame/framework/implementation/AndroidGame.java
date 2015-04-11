@@ -50,7 +50,7 @@ public class AndroidGame extends Activity implements IGame {
         renderView = new AndroidFastRenderView(this, frameBuffer);
         graphics   = new AndroidGraphics(getAssets(), frameBuffer);
         fileIO     = new AndroidFileIO(this);
-        audio      = new AndroidAudioFile(this);
+        audio      = new AndroidAudio(this);
         input      = new AndroidInput(this, renderView, scaleX, scaleY);
         screen     = getInitScreen();
         setContentView(renderView);
@@ -70,7 +70,7 @@ public class AndroidGame extends Activity implements IGame {
 
     @Override
     public void onPause(){
-        super onPause();
+        super.onPause();
         wakeLock.release();
         renderView.pause();
         screen.pause();
@@ -113,5 +113,10 @@ public class AndroidGame extends Activity implements IGame {
 
     public IScreen getCurrentScreen(){
         return screen;
+    }
+
+    @Override
+    public IScreen getInitScreen() {
+        return null;
     }
 }
