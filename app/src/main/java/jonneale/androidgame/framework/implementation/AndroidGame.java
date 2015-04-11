@@ -21,7 +21,7 @@ import jonneale.androidgame.framework.IScreen;
 /**
  * Created by jonneale on 02/04/2015.
  */
-public class AndroidGame extends Activity implements IGame {
+public abstract class AndroidGame extends Activity implements IGame {
     AndroidFastRenderView renderView;
     IGraphics graphics;
     IAudio audio;
@@ -113,10 +113,5 @@ public class AndroidGame extends Activity implements IGame {
 
     public IScreen getCurrentScreen(){
         return screen;
-    }
-
-    @Override
-    public IScreen getInitScreen() {
-        return null;
     }
 }
